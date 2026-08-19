@@ -18,7 +18,7 @@ An interactive, high-performance, animated portfolio designed for **Sameer Ali**
   - **Multimodal Video AI Pipeline**: Speech transcription (`faster-whisper`), OpenCV keyframe extraction, and NLP semantic segmentation.
   - **Deep Learning Classification & Medical AI**: Multi-label thoracic disease classification on NIH Chest X-ray14 and U-Net L\*a\*b\* image colorization.
   - **WebSense-AI Voice Control**: Real-time voice navigation with spaCy NLP intent recognition and asynchronous Flask API.
-- **📊 Categorized Skills Matrix**: Visual proficiency breakdown spanning Deep Learning, Computer Vision, Speech AI, Async Python, and modern web tech.
+- **📊 Categorized Skills Matrix**: Visual proficiency breakdown spanning Deep Learning, Computer Vision, Speech AI, Backend APIs (`FastAPI`, `Flask`), Containerization (`Docker`), and Async Python.
 - **🎓 Verified Credentials**: Google Prompting Essentials, Google AI Essentials, Python 3 Specialization, DeepLearning.AI, and IBM AI Engineering.
 - **📬 Direct Recruiter Outreach**: 1-click clipboard copy for contact details and pre-formatted mailer system.
 

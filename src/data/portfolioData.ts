@@ -138,12 +138,22 @@ export const portfolioData = {
       ],
     },
     {
+      title: "Backend, APIs & Cloud Systems",
+      icon: "Cpu",
+      skills: [
+        { name: "FastAPI", level: "Advanced", description: "High-performance async REST APIs, Pydantic data validation" },
+        { name: "Flask", level: "Advanced", description: "Lightweight microservices & AI inference endpoints" },
+        { name: "Docker", level: "Advanced", description: "Containerization of ML pipelines & reproducible environments" },
+        { name: "Asynchronous Programming", level: "Advanced", description: "asyncio, multithreading, concurrent queues, background workers" },
+        { name: "REST APIs & WebSockets", level: "Advanced", description: "Low-latency bidirectional AI communication" },
+      ],
+    },
+    {
       title: "Programming & Software Engineering",
       icon: "Code",
       skills: [
         { name: "Python", level: "Expert", description: "Production pipelines, async, OOP, typing, NumPy" },
         { name: "JavaScript / TypeScript", level: "Proficient", description: "Modern React, Node.js, Next.js" },
-        { name: "Asynchronous Programming", level: "Advanced", description: "asyncio, multithreading, concurrent queues" },
         { name: "Unit & Integration Testing", level: "Advanced", description: "pytest, test-driven validation, CI/CD" },
         { name: "Debugging & Code Refactoring", level: "Advanced", description: "Profiling, memory optimization, modular design" },
         { name: "Git & GitHub", level: "Advanced", description: "Branching strategies, collaborative workflows" },
@@ -157,19 +167,7 @@ export const portfolioData = {
         { name: "OpenCV", level: "Advanced", description: "Keyframe extraction, frame diffing, image processing" },
         { name: "spaCy NLP", level: "Advanced", description: "Custom entity extraction, rule-based matching" },
         { name: "faster-whisper", level: "Advanced", description: "Accelerated speech-to-text inference" },
-        { name: "Flask & FastAPI", level: "Advanced", description: "Low-latency REST APIs for AI backends" },
         { name: "Streamlit", level: "Advanced", description: "Rapid AI demo prototyping and dashboarding" },
-      ],
-    },
-    {
-      title: "Domains & Core Competencies",
-      icon: "Cpu",
-      skills: [
-        { name: "Multimodal AI (Vision + Audio)", level: "Advanced" },
-        { name: "Medical Image Classification", level: "Advanced" },
-        { name: "Natural Language Processing (NLP)", level: "Advanced" },
-        { name: "High-Throughput Video Chaptering", level: "Advanced" },
-        { name: "Asynchronous REST API Services", level: "Advanced" },
       ],
     },
   ] as SkillCategory[],
