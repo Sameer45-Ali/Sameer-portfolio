@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
-  <a href="https://sameer-portfolio.vercel.app" target="_blank">
+  <a href="https://sameer45-ali-portfolio.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
   </a>
   &nbsp;
@@ -164,7 +164,7 @@ Thanks for stopping by — feel free to explore my repositories or reach out for
 &nbsp;
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-sameer--ali--ai--ml-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/sameer-ali-ai-ml)
 &nbsp;
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://sameer-portfolio.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://sameer45-ali-portfolio.vercel.app)
 
 <br/><br/>
 

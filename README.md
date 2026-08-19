@@ -58,6 +58,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📬 Contact & Connect
 
+- **Live Portfolio**: [https://sameer45-ali-portfolio.vercel.app](https://sameer45-ali-portfolio.vercel.app)
 - **Email**: [sameer2659110@gmail.com](mailto:sameer2659110@gmail.com)
 - **LinkedIn**: [linkedin.com/in/sameer-ali-ai-ml](http://www.linkedin.com/in/sameer-ali-ai-ml)
 - **GitHub**: [github.com/Sameer45-Ali](https://github.com/Sameer45-Ali)
