@@ -1,112 +1,64 @@
-# Sameer Ali — AI Engineer & Model Evaluator Portfolio
+# Sameer Ali — Python AI Engineer & ML Developer Portfolio
 
-A modern, high-performance, animated portfolio built with **Next.js 14 (App Router)**, **Tailwind CSS**, and **Framer Motion**, featuring an interactive AI Evaluation Sandbox, dynamic project architecture deep dives, neural network canvas background, and full mobile responsiveness.
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.2-purple?style=flat-square&logo=framer)](https://www.framer.com/motion/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg?style=flat-square)](LICENSE)
 
----
-
-## 🚀 Live Demo & Quick Deploy to Vercel
-
-### Method 1: Automatic Deployment with GitHub + Vercel (Recommended)
-
-1. **Initialize Git & Push to GitHub**:
-   Open PowerShell in this project folder (`C:\Users\samee\.gemini\antigravity\scratch\sameer-ai-portfolio`):
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Sameer Ali AI Portfolio"
-   ```
-
-2. **Create a GitHub Repository**:
-   - Go to [github.com/new](https://github.com/new)
-   - Repository name: `sameer-portfolio` (or any name you prefer)
-   - Set to **Public**
-   - Click **Create repository**
-
-3. **Link and Push your code**:
-   ```bash
-   git remote add origin https://github.com/Sameer45-Ali/sameer-portfolio.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-4. **Deploy on Vercel**:
-   - Go to [vercel.com](https://vercel.com) and sign in with your GitHub account.
-   - Click **"Add New..."** -> **"Project"**.
-   - Click **"Import"** next to your `sameer-portfolio` repository.
-   - Leave all default settings (Framework preset: Next.js) and click **"Deploy"**.
-   - 🎉 **Your portfolio will be live worldwide in under 60 seconds with a free `.vercel.app` URL and free SSL!**
+An interactive, high-performance, animated portfolio designed for **Sameer Ali** — Python AI Engineer & ML Developer. Features an interactive AI Pipeline Sandbox, dynamic project architecture deep dives, neural network canvas background, and full responsive design.
 
 ---
 
-### Method 2: Instant Deploy via Vercel CLI
+## 🌟 Key Highlights & Features
 
-1. Run this single command inside the project directory:
-   ```bash
-   npx vercel
-   ```
-2. Follow the quick terminal prompts (press Enter for defaults).
-3. To deploy directly to production:
-   ```bash
-   npx vercel --prod
-   ```
+- **🧠 Interactive AI Pipeline Sandbox**: In-browser simulator to run Multimodal Video & Keyframe pipelines, evaluate medical deep learning classifiers, and test NLP entity matchers.
+- **⚡ Neural Synapse Canvas**: Custom HTML5 interactive particle background that forms dynamic neural connections on mouse movement.
+- **🎬 Flagship Project Showcases**:
+  - **Multimodal Video AI Pipeline**: Speech transcription (`faster-whisper`), OpenCV keyframe extraction, and NLP semantic segmentation.
+  - **Deep Learning Classification & Medical AI**: Multi-label thoracic disease classification on NIH Chest X-ray14 and U-Net L\*a\*b\* image colorization.
+  - **WebSense-AI Voice Control**: Real-time voice navigation with spaCy NLP intent recognition and asynchronous Flask API.
+- **📊 Categorized Skills Matrix**: Visual proficiency breakdown spanning Deep Learning, Computer Vision, Speech AI, Async Python, and modern web tech.
+- **🎓 Verified Credentials**: Google Prompting Essentials, Google AI Essentials, Python 3 Specialization, DeepLearning.AI, and IBM AI Engineering.
+- **📬 Direct Recruiter Outreach**: 1-click clipboard copy for contact details and pre-formatted mailer system.
 
 ---
 
-## 🛠️ Local Development
+## 🛠️ Tech Stack & Architecture
 
-To run the portfolio locally on your machine:
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router, Static Optimization)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + Custom Glassmorphism & Cyber Glow utilities
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) + HTML5 Canvas API
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+---
+
+## 💻 Local Development
+
+To run this portfolio locally:
 
 ```bash
-# 1. Install dependencies
+# 1. Clone the repository
+git clone https://github.com/Sameer45-Ali/sameer-portfolio.git
+
+# 2. Navigate to project directory
+cd sameer-portfolio
+
+# 3. Install dependencies
 npm install
 
-# 2. Run local development server
+# 4. Start development server
 npm run dev
-
-# 3. Open browser at:
-# http://localhost:3000
 ```
 
-To create a production build and test it:
-```bash
-npm run build
-npm run start
-```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 📂 Project Structure
+## 📬 Contact & Connect
 
-```
-sameer-ai-portfolio/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx         # Metadata, SEO tags & global styling
-│   │   ├── page.tsx           # Main single-page portfolio layout
-│   │   └── globals.css        # Tailwind styles & glassmorphic neon effects
-│   ├── components/
-│   │   ├── Navbar.tsx         # Responsive glass navbar with active section indicator
-│   │   ├── Hero.tsx           # High-impact animated headline & availability badge
-│   │   ├── ParticleBackground.tsx # Interactive canvas neural synapse background
-│   │   ├── AiEvalTerminal.tsx # Recruiter interactive sandbox simulating model evals
-│   │   ├── Projects.tsx       # Filterable showcase for all 4 flagship AI/ML projects
-│   │   ├── Skills.tsx         # Categorized engineering & AI skills matrix
-│   │   ├── Certifications.tsx # Google, DeepLearning.AI, IBM credentials
-│   │   ├── ExperienceEdu.tsx  # Sukkur IBA University education section
-│   │   ├── Contact.tsx        # Direct messaging, copy email/phone & socials
-│   │   └── Footer.tsx         # Minimalist status & footer
-│   └── data/
-│       └── portfolioData.ts   # Centralized data file for easy updates
-├── package.json
-├── tailwind.config.ts
-└── tsconfig.json
-```
-
----
-
-## 📝 Customizing Your Information
-
-All your personal information, projects, skills, and certifications are centralized in:
-`src/data/portfolioData.ts`
-
-Whenever you want to add a new project, update metrics, or add new certifications, just edit that one file!
+- **Email**: [sameer2659110@gmail.com](mailto:sameer2659110@gmail.com)
+- **LinkedIn**: [linkedin.com/in/sameer-ali-ai-ml](http://www.linkedin.com/in/sameer-ali-ai-ml)
+- **GitHub**: [github.com/Sameer45-Ali](https://github.com/Sameer45-Ali)
+- **Location**: Hyderabad, Pakistan (Sukkur IBA University)
