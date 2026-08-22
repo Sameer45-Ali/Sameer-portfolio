@@ -167,10 +167,29 @@ export const portfolioData = {
         "Custom multimodal conversational dataset pipeline with synthetic invoice generation.",
         "Automated benchmark harness comparing zero-shot Base VLM vs. fine-tuned DocVLM.",
       ],
+    {
+      id: "image-enhancement-dl",
+      title: "AI Image Enhancement & Colorization Studio",
+      tagline: "OpenCV DNN Colorization (CIE LAB) & MIRNet-Inspired Low-Light Enhancement",
+      category: "Multimodal & Vision",
+      description:
+        "Dual-pipeline visual restoration web application combining OpenCV DNN (Zhang et al. ECCV 2016 Caffe) for photo-realistic CIE LAB grayscale colorization and MIRNet-inspired low-light contrast & gamma enhancement with a unified Flask inference server.",
+      highlights: [
+        "Implemented automatic grayscale colorization by extracting CIE LAB L-channel and predicting ab chroma channels via pre-trained Caffe models in OpenCV DNN.",
+        "Engineered a lightweight MIRNet-inspired low-light image enhancer combining CLAHE, noise filtering, and gamma correction for real-time CPU deployment.",
+        "Built and deployed a unified Flask inference API server and responsive web studio for interactive photo restoration.",
+      ],
+      techStack: ["Python", "OpenCV DNN", "CIE LAB Color Space", "Flask", "NumPy", "MIRNet", "Pillow"],
+      githubUrl: "https://github.com/ShahzebX/Image-Enhancement-DL",
+      architectureDetails: [
+        "CIE LAB color space separation enabling decoupled luminance processing from chroma prediction.",
+        "Zhang et al. ECCV 2016 deep CNN colorization architecture running via OpenCV DNN backend.",
+        "Classical multi-scale enhancer delivering deterministic sub-second low-light restoration.",
+      ],
       metrics: [
-        { label: "JSON Compliance", value: "96.8% (+109.5%)" },
-        { label: "Extraction F1", value: "94.2% (+53.4%)" },
-        { label: "VRAM Footprint", value: "1.8 GB (-60.8%)" },
+        { label: "Color Space", value: "CIE L*a*b* 224x224" },
+        { label: "Engine", value: "OpenCV DNN Caffe" },
+        { label: "Latency", value: "Real-time CPU Inference" },
       ],
     },
   ] as Project[],

@@ -128,6 +128,18 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
       </p>
       <a href="https://github.com/Sameer45-Ali"><b>Inspect Voice Service ➔</b></a>
     </td>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🎨 AI Image Enhancement & Colorization Studio</h3>
+      <p>Dual-pipeline visual restoration web application combining <b>OpenCV DNN (Zhang et al. ECCV 2016 Caffe)</b> for photo-realistic CIE LAB grayscale colorization and <b>MIRNet-inspired low-light contrast & gamma enhancement</b> with a unified Flask inference server.</p>
+      <p>
+        <img src="https://img.shields.io/badge/OpenCV_DNN-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
+        <img src="https://img.shields.io/badge/CIE_LAB-10B981?style=flat-square" />
+        <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
+        <img src="https://img.shields.io/badge/MIRNet-38BDF8?style=flat-square" />
+      </p>
+      <a href="https://github.com/ShahzebX/Image-Enhancement-DL"><b>View Restoration Studio ➔</b></a>
+    </td>
     <td width="50%" valign="top">
       <h3>🌐 Next.js Animated AI Portfolio</h3>
       <p>Interactive animated portfolio featuring an in-browser AI pipeline evaluation sandbox, neural synapse particle mesh, dynamic project drawers, and dark glassmorphic styling.</p>
