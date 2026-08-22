@@ -39,8 +39,8 @@ export const portfolioData = {
     bio: "AI/ML Engineer specializing in Python development, multimodal AI pipelines, and deep learning architectures. Experienced in designing asynchronous processing pipelines for video transcription and keyframe extraction, training convolutional neural networks (CNNs) for medical image classification, and building low-latency conversational AI systems with TensorFlow, Keras, OpenCV, faster-whisper, and spaCy.",
     availability: "Open to Remote, Hybrid, and On-site Python, AI/ML, and Software Engineering opportunities worldwide.",
     stats: [
-      { label: "Core AI Projects", value: "3 Flagship" },
-      { label: "Deep Learning Stack", value: "TensorFlow & Keras" },
+      { label: "Core AI Projects", value: "6 Flagship" },
+      { label: "Deep Learning Stack", value: "PyTorch, TF & Keras" },
       { label: "Multimodal AI", value: "Vision & Speech" },
       { label: "CS Degree", value: "Sukkur IBA '26" },
     ],

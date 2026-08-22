@@ -80,7 +80,7 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
         <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
         <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
       </p>
-      <a href="https://github.com/Sameer45-Ali"><b>Explore Pipeline Code ➔</b></a>
+      <a href="https://github.com/Sameer45-Ali/Multimodal-video-ai"><b>Explore Pipeline Code ➔</b></a>
     </td>
     <td width="50%" valign="top">
       <h3>🫁 Medical Chest X-ray & Deep Learning</h3>
