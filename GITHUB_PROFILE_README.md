@@ -92,6 +92,29 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
       </p>
       <a href="https://github.com/Sameer45-Ali"><b>View Model Benchmarks ➔</b></a>
     </td>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🛍️ NexusStore — E-Commerce with GenAI Concierge</h3>
+      <p>Modern e-commerce platform featuring dual real-time currency/country synchronization (USD, PKR, EUR, GBP) and an intelligent <b>Generative AI Shopping Concierge</b> powered by Groq LLMs (120B/27B) with clickable dynamic product cards and offline semantic fallback.</p>
+      <p>
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+        <img src="https://img.shields.io/badge/Groq_GenAI-F55036?style=flat-square&logo=openai&logoColor=white" />
+        <img src="https://img.shields.io/badge/Multi--Currency-10B981?style=flat-square" />
+        <img src="https://img.shields.io/badge/Glassmorphism-6366F1?style=flat-square" />
+      </p>
+      <a href="https://github.com/Sameer45-Ali/Ecommerce-frontend-design"><b>Explore NexusStore Code ➔</b></a>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📄 DocVLM: 4-Bit Fine-Tuned Vision-Language Model</h3>
+      <p>Multimodal document intelligence pipeline that fine-tunes <b>Qwen2-VL-2B</b> using <b>QLoRA (r=16, α=32)</b> and 4-bit NF4 quantization for zero-hallucination structured JSON extraction from complex invoices, tabular receipts, and forms.</p>
+      <p>
+        <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+        <img src="https://img.shields.io/badge/PEFT_QLoRA-8B5CF6?style=flat-square" />
+        <img src="https://img.shields.io/badge/Qwen2--VL-FF6F00?style=flat-square" />
+        <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+      </p>
+      <a href="https://github.com/Sameer45-Ali/doc-vlm-qlora"><b>View DocVLM Repository ➔</b></a>
+    </td>
   </tr>
   <tr>
     <td width="50%" valign="top">

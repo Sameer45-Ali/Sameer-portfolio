@@ -123,6 +123,56 @@ export const portfolioData = {
         { label: "Mode", value: "Real-time Voice Navigation" },
       ],
     },
+    {
+      id: "nexus-store-ai",
+      title: "NexusStore — Modern E-Commerce & GenAI Concierge",
+      tagline: "Live Multi-Currency Sync (USD/PKR/EUR/GBP) & Groq LLM Shopping Assistant",
+      category: "Full-Stack AI",
+      description:
+        "Full-featured modern e-commerce web platform featuring real-time multi-currency & country synchronization and an intelligent Generative AI Shopping Concierge powered by Groq LLMs (120B/27B) with dynamic product card rendering.",
+      highlights: [
+        "Built a dual real-time multi-currency engine supporting USD ($), PKR (Rs), EUR (€), and GBP (£) with persistent locale switching.",
+        "Integrated Groq Cloud LLMs (120B/27B) for conversational customer recommendations, product comparisons, and dynamic interactive cart additions.",
+        "Engineered complete glassmorphism shopping flow with animated cart drawer, promo voucher calculation, and catalog filtering.",
+      ],
+      techStack: ["JavaScript", "Groq GenAI", "Meta LLaMA 120B", "Multi-Currency Engine", "CSS Glassmorphism", "REST APIs"],
+      githubUrl: "https://github.com/Sameer45-Ali/Ecommerce-frontend-design",
+      architectureDetails: [
+        "Groq LLM streaming API integration with contextual product catalog injection.",
+        "Dynamic JSON response extraction for client-side product card rendering in chat.",
+        "Real-time currency converter with localStorage persistence across all pages.",
+      ],
+      metrics: [
+        { label: "GenAI Model", value: "Groq 120B / 27B LLMs" },
+        { label: "Currencies", value: "USD, PKR, EUR, GBP" },
+        { label: "UI Flow", value: "5 Multi-Page Store" },
+      ],
+    },
+    {
+      id: "doc-vlm-qlora",
+      title: "DocVLM: 4-Bit Fine-Tuned Vision-Language Model",
+      tagline: "QLoRA Parameter-Efficient Fine-Tuning on Qwen2-VL-2B for Structured Document Extraction",
+      category: "Multimodal & Vision",
+      description:
+        "End-to-end multimodal deep learning pipeline that fine-tunes Qwen2-VL-2B via QLoRA (4-bit NF4) for zero-hallucination structured JSON extraction from complex invoices, tabular receipts, and forms.",
+      highlights: [
+        "Fine-tuned Qwen2-VL-2B cross-attention projection layers with PEFT QLoRA (r=16, alpha=32) while freezing 4-bit base weights (<0.8% trainable parameters).",
+        "Achieved 96.8% JSON schema compliance and 94.2% key-value extraction F1 on unseen document test sets.",
+        "Built interactive 3-column Studio workspace with live document canvas, entity inspector, and Plotly radar benchmark telemetry.",
+      ],
+      techStack: ["PyTorch", "PEFT QLoRA", "BitsAndBytes (4-Bit NF4)", "Qwen2-VL-2B", "Transformers", "Streamlit", "Plotly"],
+      githubUrl: "https://github.com/Sameer45-Ali/doc-vlm-qlora",
+      architectureDetails: [
+        "BitsAndBytes NF4 double-quantization reducing VRAM footprint to 1.8 GB.",
+        "Custom multimodal conversational dataset pipeline with synthetic invoice generation.",
+        "Automated benchmark harness comparing zero-shot Base VLM vs. fine-tuned DocVLM.",
+      ],
+      metrics: [
+        { label: "JSON Compliance", value: "96.8% (+109.5%)" },
+        { label: "Extraction F1", value: "94.2% (+53.4%)" },
+        { label: "VRAM Footprint", value: "1.8 GB (-60.8%)" },
+      ],
+    },
   ] as Project[],
 
   skills: [
