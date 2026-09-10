@@ -1,12 +1,12 @@
 <div align="center">
 
 <!-- 🌈 ANIMATED GRADIENT WAVE BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,8,24&height=220&section=header&text=Sameer%20Ali&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Python%20AI%20Engineer%20•%20Deep%20Learning%20•%20Multimodal%20Systems&descAlignY=62&descSize=18&descAlign=50" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,8,24&height=220&section=header&text=Sameer%20Ali&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Agentic%20AI%20Engineer%20•%20Autonomous%20Agents%20•%20Multimodal%20Systems&descAlignY=62&descSize=18&descAlign=50" width="100%" />
 
 <!-- ✨ ANIMATED GLOWING DYNAMIC TYPING LINE -->
 <p align="center">
   <a href="https://github.com/Sameer45-Ali">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=00F0FF&center=true&vCenter=true&width=700&lines=Speech+AI+%7C+Computer+Vision+%7C+Deep+Learning;FastAPI+%7C+Docker+%7C+Asynchronous+Pipelines;Multimodal+Pipelines+with+faster-whisper+%26+OpenCV;Medical+AI+Classification+(NIH+Chest+X-ray14)+%26+U-Net;Sukkur+IBA+University+CS+Graduate+(2022%E2%80%932026)" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=00F0FF&center=true&vCenter=true&width=700&lines=Agentic+AI+%7C+Autonomous+Coding+Agents+%7C+MCTS;Tree-sitter+AST+Code+RAG+%7C+Docker+Sandboxes;Speech+AI+%7C+Computer+Vision+%7C+Deep+Learning;Clinical+AI+%7C+XGBoost+%26+LightGBM+(100%25+Recall);Sukkur+IBA+University+CS+Graduate+(2022%E2%80%932026)" alt="Typing SVG" />
   </a>
 </p>
 
@@ -35,12 +35,12 @@
 
 ### 💫 About Me
 
-I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** based in Pakistan, building high-performance **Python AI pipelines, backend API architectures (FastAPI & Flask), containerized ML deployments (Docker), and deep neural network models**.
+I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** based in Pakistan, building high-performance **Autonomous AI Agents, Agentic Coding Systems (MCTS + Tree-sitter AST RAG), Python AI pipelines, backend architectures (FastAPI & Flask), containerized deployments (Docker), and clinical deep learning models**.
 
-- 🔭 **Currently Building:** High-throughput video processing workflows with `faster-whisper`, containerized with `Docker`, and medical image classifiers on `NIH Chest X-ray14`.
-- 🧠 **Core Specialties:** Deep CNNs (`ResNet50`, `MobileNetV2`, `EfficientNetB0`), Generative `U-Net` colorization, OpenCV keyframe extraction, and `spaCy` NLP intent matching.
+- 🤖 **Currently Building:** `Aegis-SWE` — an autonomous software engineering agent powered by Claude 3.5 Sonnet, GPT-4o, and Llama 3.3 leveraging Monte Carlo Tree Search (MCTS) and Tree-sitter AST Code RAG with closed-loop Docker test sandboxing.
+- 🔬 **Clinical & Deep Learning:** Dual-disease hematological diagnostic classifier (Anemia & Leukemia) using `XGBoost` & `LightGBM` reaching 100% recall on clinical blood parameters, and multimodal video processing workflows with `faster-whisper` and `OpenCV`.
 - ⚡ **Backend & Engineering:** High-performance async APIs with `FastAPI` and `Flask`, containerization with `Docker`, asynchronous queues (`asyncio`), and test-driven validation (`pytest`).
-- 🌱 **Availability:** Open to **AI/ML Engineer**, **Python Backend Developer**, and **Deep Learning** roles (Remote, Hybrid, or On-site worldwide).
+- 🌱 **Availability:** Open to **Agentic AI Engineer**, **AI/ML Engineer**, and **Python Backend Developer** roles (Remote, Hybrid, or On-site worldwide).
 
 ---
 
@@ -57,8 +57,9 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
 
 | Category | Technologies & Tools |
 | :--- | :--- |
-| **🧠 Deep Learning & Vision** | ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white) ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white) ![spaCy](https://img.shields.io/badge/spaCy-09A3D5?style=flat-square&logo=spacy&logoColor=white) |
-| **🎙️ Speech & Multimodal** | ![faster-whisper](https://img.shields.io/badge/faster--whisper-00F0FF?style=flat-square&logo=openai&logoColor=black) ![Asyncio](https://img.shields.io/badge/Asyncio-3776AB?style=flat-square&logo=python&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white) |
+| **🤖 Autonomous & Agentic AI** | ![Claude 3.5 Sonnet](https://img.shields.io/badge/Claude_3.5_Sonnet-D97706?style=flat-square) ![GPT-4o](https://img.shields.io/badge/GPT--4o-412991?style=flat-square&logo=openai&logoColor=white) ![MCTS Search](https://img.shields.io/badge/MCTS_UCT_Search-00F0FF?style=flat-square) ![Tree-sitter AST](https://img.shields.io/badge/Tree--sitter_AST-22C55E?style=flat-square) |
+| **🧠 Machine Learning & Clinical AI** | ![XGBoost](https://img.shields.io/badge/XGBoost-1572B6?style=flat-square) ![LightGBM](https://img.shields.io/badge/LightGBM-FFA500?style=flat-square) ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white) ![SMOTE](https://img.shields.io/badge/SMOTE_Resampling-38BDF8?style=flat-square) |
+| **🎙️ Speech & Multimodal Vision** | ![faster-whisper](https://img.shields.io/badge/faster--whisper-00F0FF?style=flat-square&logo=openai&logoColor=black) ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white) ![Asyncio](https://img.shields.io/badge/Asyncio-3776AB?style=flat-square&logo=python&logoColor=white) ![spaCy](https://img.shields.io/badge/spaCy-09A3D5?style=flat-square&logo=spacy&logoColor=white) |
 | **⚡ Backend, Cloud & Containers** | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![REST APIs](https://img.shields.io/badge/REST_APIs-38BDF8?style=flat-square) |
 | **💻 Web & Frontend** | ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white) |
 | **🔧 Dev Tools & Testing** | ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) |
@@ -72,6 +73,30 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
 <table>
   <tr>
     <td width="50%" valign="top">
+      <h3>🤖 Aegis-SWE: Autonomous Software Engineering Agent</h3>
+      <p>Autonomous coding agent powered by <b>Claude 3.5 Sonnet, GPT-4o, and Llama 3.3</b>. Features <b>MCTS + UCT</b> tree search with automated backtracking, <b>Tree-sitter AST</b> symbol call-graphs for Code RAG without context overflow, 3-role prompting (Planner, Generator, Critic), and <b>closed-loop Docker sandboxing</b> for test verification.</p>
+      <p>
+        <img src="https://img.shields.io/badge/Claude_3.5_Sonnet-D97706?style=flat-square" />
+        <img src="https://img.shields.io/badge/MCTS_Tree_Search-00F0FF?style=flat-square" />
+        <img src="https://img.shields.io/badge/Tree--sitter_AST-22C55E?style=flat-square" />
+        <img src="https://img.shields.io/badge/Docker_Sandbox-2496ED?style=flat-square&logo=docker&logoColor=white" />
+      </p>
+      <a href="https://github.com/Sameer45-Ali/Sameer-portfolio"><b>Explore Aegis-SWE Architecture ➔</b></a>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🩸 Hematological Diagnostic System (Anemia & Leukemia)</h3>
+      <p>Dual-disease clinical diagnostic pipeline utilizing <b>XGBoost</b> and <b>LightGBM</b> on routine Complete Blood Count (CBC) parameters and Bone Marrow Blast percentages. Solved the clinical screening accuracy paradox with target realignment, SMOTE resampling, and cost-sensitive learning to achieve <b>100% recall</b> on leukemia.</p>
+      <p>
+        <img src="https://img.shields.io/badge/XGBoost-1572B6?style=flat-square" />
+        <img src="https://img.shields.io/badge/LightGBM-FFA500?style=flat-square" />
+        <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
+        <img src="https://img.shields.io/badge/Recall-100%25-brightgreen?style=flat-square" />
+      </p>
+      <a href="https://github.com/Sameer45-Ali/ANEMIA_LEUKEMIA_DISEASES_PREDICTION"><b>Explore Clinical Model ➔</b></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <h3>🎬 Multimodal Video AI Pipeline</h3>
       <p>High-throughput asynchronous Python pipeline that ingests long-form video, transcribes audio at 10x realtime with <code>faster-whisper</code>, extracts dynamic visual keyframes via <code>OpenCV</code>, and generates topic-clustered chapters using <code>spaCy</code> NLP embeddings.</p>
       <p>
@@ -83,17 +108,6 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
       <a href="https://github.com/Sameer45-Ali/Multimodal-video-ai"><b>Explore Pipeline Code ➔</b></a>
     </td>
     <td width="50%" valign="top">
-      <h3>🫁 Medical Chest X-ray & Deep Learning</h3>
-      <p>Multi-label thoracic pathology classifier trained on the <b>NIH Chest X-ray14</b> benchmark across 14 condition classes (MobileNetV2, ResNet50, EfficientNetB0). Also implements generative <b>U-Net</b> architectures for photo-realistic image colorization in L*a*b* space.</p>
-      <p>
-        <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
-        <img src="https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white" />
-        <img src="https://img.shields.io/badge/ResNet50-00F0FF?style=flat-square" />
-      </p>
-      <a href="https://github.com/Sameer45-Ali"><b>View Model Benchmarks ➔</b></a>
-    </td>
-  <tr>
-    <td width="50%" valign="top">
       <h3>🛍️ NexusStore — E-Commerce with GenAI Concierge</h3>
       <p>Modern e-commerce platform featuring dual real-time currency/country synchronization (USD, PKR, EUR, GBP) and an intelligent <b>Generative AI Shopping Concierge</b> powered by Groq LLMs (120B/27B) with clickable dynamic product cards and offline semantic fallback.</p>
       <p>
@@ -104,6 +118,8 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
       </p>
       <a href="https://github.com/Sameer45-Ali/Ecommerce-frontend-design"><b>Explore NexusStore Code ➔</b></a>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>📄 DocVLM: 4-Bit Fine-Tuned Vision-Language Model</h3>
       <p>Multimodal document intelligence pipeline that fine-tunes <b>Qwen2-VL-2B</b> using <b>QLoRA (r=16, α=32)</b> and 4-bit NF4 quantization for zero-hallucination structured JSON extraction from complex invoices, tabular receipts, and forms.</p>
@@ -115,8 +131,6 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
       </p>
       <a href="https://github.com/Sameer45-Ali/doc-vlm-qlora"><b>View DocVLM Repository ➔</b></a>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>🎙️ WebSense-AI Voice Navigation</h3>
       <p>Conversational browser extension leveraging natural-language understanding, intent matching, entity extraction, and confidence scoring to navigate web applications via voice commands with sub-100ms Flask / FastAPI response times.</p>
@@ -128,6 +142,7 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
       </p>
       <a href="https://github.com/Sameer45-Ali"><b>Inspect Voice Service ➔</b></a>
     </td>
+  </tr>
   <tr>
     <td width="50%" valign="top">
       <h3>🎨 AI Image Enhancement & Colorization Studio</h3>
@@ -149,29 +164,6 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
         <img src="https://img.shields.io/badge/Framer_Motion-a855f7?style=flat-square" />
       </p>
       <a href="https://github.com/Sameer45-Ali/Sameer-portfolio"><b>View Portfolio Source ➔</b></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🩸 Hematological Diagnostic System (Anemia & Leukemia)</h3>
-      <p>Dual-disease clinical diagnostic pipeline utilizing <b>XGBoost</b> and <b>LightGBM</b> on routine CBC blood parameters and Bone Marrow Blast percentages. Solved the clinical screening accuracy paradox with SMOTE resampling and cost-sensitive learning to reach <b>100% recall</b> on leukemia.</p>
-      <p>
-        <img src="https://img.shields.io/badge/XGBoost-1572B6?style=flat-square" />
-        <img src="https://img.shields.io/badge/LightGBM-FFA500?style=flat-square" />
-        <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
-        <img src="https://img.shields.io/badge/Recall-100%25-brightgreen?style=flat-square" />
-      </p>
-      <a href="https://github.com/Sameer45-Ali/ANEMIA_LEUKEMIA_DISEASES_PREDICTION"><b>Explore Clinical Model ➔</b></a>
-    <td width="50%" valign="top">
-      <h3>🤖 Aegis-SWE: Autonomous Software Engineering Agent</h3>
-      <p>Autonomous coding agent powered by <b>Claude 3.5 Sonnet, GPT-4o, and Llama 3.3</b>. Features <b>MCTS + UCT</b> tree search with backtracking, <b>Tree-sitter AST</b> symbol call-graphs for Code RAG, 3-role prompting (Planner, Generator, Critic), and <b>closed-loop Docker verification</b>.</p>
-      <p>
-        <img src="https://img.shields.io/badge/Claude_3.5_Sonnet-D97706?style=flat-square" />
-        <img src="https://img.shields.io/badge/MCTS_Tree_Search-00F0FF?style=flat-square" />
-        <img src="https://img.shields.io/badge/Tree--sitter_AST-22C55E?style=flat-square" />
-        <img src="https://img.shields.io/badge/Docker_Sandbox-2496ED?style=flat-square&logo=docker&logoColor=white" />
-      </p>
-      <a href="https://github.com/Sameer45-Ali/Sameer-portfolio"><b>Explore Aegis-SWE Architecture ➔</b></a>
     </td>
   </tr>
 </table>
