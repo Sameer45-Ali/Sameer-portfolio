@@ -27,6 +27,8 @@ export default function Contact() {
     message: "",
   });
 
+  const [sentSuccess, setSentSuccess] = useState(false);
+
   const copyToClipboard = (text: string, type: "email" | "phone") => {
     navigator.clipboard.writeText(text);
     if (type === "email") {
@@ -38,14 +40,29 @@ export default function Contact() {
     }
   };
 
+  const getEmailBody = () => {
+    return `Hi Sameer,\n\nMy name is ${formData.name || "[Your Name]"} (${formData.email || "[Your Email]"}).\n\n${formData.message || ""}`;
+  };
+
+  const handleOpenGmailWeb = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(formData.subject || "Opportunity / Collaboration with Sameer");
+    const body = encodeURIComponent(getEmailBody());
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${portfolioData.personal.email}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    setSentSuccess(true);
+    setTimeout(() => setSentSuccess(false), 6000);
+  };
+
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     const mailtoUrl = `mailto:${portfolioData.personal.email}?subject=${encodeURIComponent(
       formData.subject || "Collaboration Inquiry"
-    )}&body=${encodeURIComponent(
-      `Hi Sameer,\n\nMy name is ${formData.name} (${formData.email}).\n\n${formData.message}`
-    )}`;
+    )}&body=${encodeURIComponent(getEmailBody())}`;
+    
     window.location.href = mailtoUrl;
+    setSentSuccess(true);
+    setTimeout(() => setSentSuccess(false), 6000);
   };
 
   return (
@@ -259,13 +276,47 @@ export default function Contact() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 glow-btn"
-              >
-                <Send className="w-4 h-4 text-slate-950" />
-                Transmit Message via Email
-              </button>
+              <div className="space-y-3 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <button
+                    type="button"
+                    onClick={handleOpenGmailWeb}
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-red-500 via-rose-500 to-amber-500 text-white font-bold text-xs sm:text-sm hover:brightness-110 shadow-lg shadow-red-500/20 transition-all flex items-center justify-center gap-2"
+                  >
+                    <Mail className="w-4 h-4 text-white" />
+                    Open in Gmail (Web)
+                  </button>
+
+                  <button
+                    type="submit"
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-600 text-slate-950 font-bold text-xs sm:text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 glow-btn"
+                  >
+                    <Send className="w-4 h-4 text-slate-950" />
+                    Open in Default Mail App
+                  </button>
+                </div>
+
+                {sentSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono text-center"
+                  >
+                    ✓ Email composer opened! Click &quot;Send&quot; in Gmail/Mail to transmit your message to Sameer.
+                  </motion.div>
+                )}
+
+                <p className="text-[11px] text-slate-500 text-center font-mono">
+                  Prefer direct emailing? Reach Sameer directly at{" "}
+                  <button
+                    type="button"
+                    onClick={() => copyToClipboard(portfolioData.personal.email, "email")}
+                    className="text-cyan-400 underline hover:text-cyan-300"
+                  >
+                    {portfolioData.personal.email}
+                  </button>
+                </p>
+              </div>
             </form>
           </motion.div>
         </div>
