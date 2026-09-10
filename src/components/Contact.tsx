@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -13,6 +14,9 @@ import {
   Linkedin,
   Sparkles,
   ArrowUpRight,
+  Loader2,
+  AlertCircle,
+  CheckCircle2,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 
@@ -27,7 +31,9 @@ export default function Contact() {
     message: "",
   });
 
+  const [isSending, setIsSending] = useState(false);
   const [sentSuccess, setSentSuccess] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   const copyToClipboard = (text: string, type: "email" | "phone") => {
     navigator.clipboard.writeText(text);
@@ -40,29 +46,42 @@ export default function Contact() {
     }
   };
 
-  const getEmailBody = () => {
-    return `Hi Sameer,\n\nMy name is ${formData.name || "[Your Name]"} (${formData.email || "[Your Email]"}).\n\n${formData.message || ""}`;
-  };
-
-  const handleOpenGmailWeb = (e: React.MouseEvent) => {
+  const handleDirectSend = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(formData.subject || "Opportunity / Collaboration with Sameer");
-    const body = encodeURIComponent(getEmailBody());
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${portfolioData.personal.email}&su=${subject}&body=${body}`;
-    window.open(gmailUrl, "_blank", "noopener,noreferrer");
-    setSentSuccess(true);
-    setTimeout(() => setSentSuccess(false), 6000);
-  };
+    setIsSending(true);
+    setSendError(null);
 
-  const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault();
-    const mailtoUrl = `mailto:${portfolioData.personal.email}?subject=${encodeURIComponent(
-      formData.subject || "Collaboration Inquiry"
-    )}&body=${encodeURIComponent(getEmailBody())}`;
-    
-    window.location.href = mailtoUrl;
-    setSentSuccess(true);
-    setTimeout(() => setSentSuccess(false), 6000);
+    const serviceId = "service_twek2bc";
+    const templateId = "template_uk2c45q";
+    const publicKey = "FYZjQORow55KHB19G";
+
+    const templateParams = {
+      from_name: formData.name,
+      to_name: "Sameer Ali",
+      reply_to: formData.email,
+      from_email: formData.email,
+      subject: formData.subject || "Collaboration Inquiry",
+      message: formData.message,
+    };
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      setSentSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "Opportunity / Collaboration with Sameer",
+        message: "",
+      });
+      setTimeout(() => setSentSuccess(false), 8000);
+    } catch (err: any) {
+      console.error("EmailJS submission error:", err);
+      setSendError(
+        err?.text || "Failed to send message. Please try again or email directly."
+      );
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -209,7 +228,7 @@ export default function Contact() {
               Fill out the details below to trigger a pre-formatted email directly to Sameer.
             </p>
 
-            <form onSubmit={handleSendMessage} className="space-y-4">
+            <form onSubmit={handleDirectSend} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-mono text-slate-300 mb-1.5">
@@ -277,37 +296,48 @@ export default function Contact() {
               </div>
 
               <div className="space-y-3 pt-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <button
-                    type="button"
-                    onClick={handleOpenGmailWeb}
-                    className="w-full py-3 rounded-xl bg-gradient-to-r from-red-500 via-rose-500 to-amber-500 text-white font-bold text-xs sm:text-sm hover:brightness-110 shadow-lg shadow-red-500/20 transition-all flex items-center justify-center gap-2"
-                  >
-                    <Mail className="w-4 h-4 text-white" />
-                    Open in Gmail (Web)
-                  </button>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-600 text-slate-950 font-bold text-xs sm:text-sm hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 glow-btn"
-                  >
-                    <Send className="w-4 h-4 text-slate-950" />
-                    Open in Default Mail App
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/25 transition-all flex items-center justify-center gap-2 glow-btn disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {isSending ? (
+                    <>
+                      <Loader2 className="w-4 h-4 text-slate-950 animate-spin" />
+                      Transmitting Message Directly...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 text-slate-950" />
+                      Send Message Directly to Sameer
+                    </>
+                  )}
+                </button>
 
                 {sentSuccess && (
                   <motion.div
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono text-center"
+                    className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-center justify-center gap-2"
                   >
-                    ✓ Email composer opened! Click &quot;Send&quot; in Gmail/Mail to transmit your message to Sameer.
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Message delivered straight to Sameer&apos;s Gmail inbox!</span>
+                  </motion.div>
+                )}
+
+                {sendError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/40 text-rose-300 text-xs font-mono flex items-center justify-center gap-2"
+                  >
+                    <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+                    <span>{sendError}</span>
                   </motion.div>
                 )}
 
                 <p className="text-[11px] text-slate-500 text-center font-mono">
-                  Prefer direct emailing? Reach Sameer directly at{" "}
+                  Direct transmission powered by EmailJS • Also reach Sameer directly at{" "}
                   <button
                     type="button"
                     onClick={() => copyToClipboard(portfolioData.personal.email, "email")}
