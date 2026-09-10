@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Terminal,
   ArrowRight,
@@ -15,6 +15,51 @@ import {
 import { portfolioData } from "@/data/portfolioData";
 
 export default function Hero() {
+  const roleRotations = [
+    {
+      primary: "Agentic AI Engineer",
+      primaryColor: "text-cyan-400",
+      secondary: "Autonomous Coding Agents",
+      secondaryColor: "text-purple-400",
+      tertiary: "MCTS & Code RAG",
+      tertiaryColor: "text-emerald-400",
+    },
+    {
+      primary: "Python AI / ML Engineer",
+      primaryColor: "text-sky-400",
+      secondary: "Multimodal Video Pipelines",
+      secondaryColor: "text-pink-400",
+      tertiary: "faster-whisper & OpenCV",
+      tertiaryColor: "text-amber-400",
+    },
+    {
+      primary: "Deep Learning Specialist",
+      primaryColor: "text-emerald-400",
+      secondary: "Clinical AI & Diagnostics",
+      secondaryColor: "text-cyan-400",
+      tertiary: "XGBoost, LightGBM & CNNs",
+      tertiaryColor: "text-purple-400",
+    },
+    {
+      primary: "Full-Stack AI Developer",
+      primaryColor: "text-purple-400",
+      secondary: "FastAPI & Docker Sandboxes",
+      secondaryColor: "text-cyan-400",
+      tertiary: "Next.js & GenAI LLMs",
+      tertiaryColor: "text-emerald-400",
+    },
+  ];
+
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roleRotations.length);
+    }, 3600);
+    return () => clearInterval(timer);
+  }, [roleRotations.length]);
+
+  const currentRole = roleRotations[roleIndex];
   return (
     <section
       id="hero"
@@ -48,19 +93,31 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtitle / Role */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 mb-6 flex flex-wrap items-center justify-center gap-2"
-        >
-          <span className="font-mono text-cyan-400">Agentic AI Engineer</span>
-          <span className="text-slate-600">•</span>
-          <span className="font-mono text-purple-400">Autonomous Coding Agents</span>
-          <span className="text-slate-600">•</span>
-          <span className="font-mono text-emerald-400">Multimodal & Vision AI</span>
-        </motion.div>
+        {/* Subtitle / Role (Animated Cycling) */}
+        <div className="min-h-[48px] sm:min-h-[56px] flex items-center justify-center mb-6">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={roleIndex}
+              initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
+              transition={{ duration: 0.45, ease: "easeInOut" }}
+              className="text-base sm:text-xl md:text-2xl font-semibold text-slate-300 flex flex-wrap items-center justify-center gap-2"
+            >
+              <span className={`font-mono font-bold ${currentRole.primaryColor} drop-shadow-[0_0_12px_rgba(0,240,255,0.3)]`}>
+                {currentRole.primary}
+              </span>
+              <span className="text-slate-600 select-none">•</span>
+              <span className={`font-mono ${currentRole.secondaryColor}`}>
+                {currentRole.secondary}
+              </span>
+              <span className="text-slate-600 select-none">•</span>
+              <span className={`font-mono ${currentRole.tertiaryColor}`}>
+                {currentRole.tertiary}
+              </span>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         {/* Bio / Summary */}
         <motion.p
