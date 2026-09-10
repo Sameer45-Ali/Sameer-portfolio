@@ -148,7 +148,7 @@ export default function AiEvalTerminal() {
                 <span>•</span>
                 <span className="text-slate-400 flex items-center gap-1">
                   <Cpu className="w-3 h-3 text-purple-400" />
-                  Backend: Python / Asyncio / spaCy
+                  Backend: Python / MCTS / Tree-sitter / Docker
                 </span>
               </div>
               <div className="text-cyan-400/80 font-mono">

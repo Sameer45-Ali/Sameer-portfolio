@@ -151,6 +151,29 @@ I'm a **Computer Science graduate from Sukkur IBA University (2022–2026)** bas
       <a href="https://github.com/Sameer45-Ali/Sameer-portfolio"><b>View Portfolio Source ➔</b></a>
     </td>
   </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🩸 Hematological Diagnostic System (Anemia & Leukemia)</h3>
+      <p>Dual-disease clinical diagnostic pipeline utilizing <b>XGBoost</b> and <b>LightGBM</b> on routine CBC blood parameters and Bone Marrow Blast percentages. Solved the clinical screening accuracy paradox with SMOTE resampling and cost-sensitive learning to reach <b>100% recall</b> on leukemia.</p>
+      <p>
+        <img src="https://img.shields.io/badge/XGBoost-1572B6?style=flat-square" />
+        <img src="https://img.shields.io/badge/LightGBM-FFA500?style=flat-square" />
+        <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
+        <img src="https://img.shields.io/badge/Recall-100%25-brightgreen?style=flat-square" />
+      </p>
+      <a href="https://github.com/Sameer45-Ali/ANEMIA_LEUKEMIA_DISEASES_PREDICTION"><b>Explore Clinical Model ➔</b></a>
+    <td width="50%" valign="top">
+      <h3>🤖 Aegis-SWE: Autonomous Software Engineering Agent</h3>
+      <p>Autonomous coding agent powered by <b>Claude 3.5 Sonnet, GPT-4o, and Llama 3.3</b>. Features <b>MCTS + UCT</b> tree search with backtracking, <b>Tree-sitter AST</b> symbol call-graphs for Code RAG, 3-role prompting (Planner, Generator, Critic), and <b>closed-loop Docker verification</b>.</p>
+      <p>
+        <img src="https://img.shields.io/badge/Claude_3.5_Sonnet-D97706?style=flat-square" />
+        <img src="https://img.shields.io/badge/MCTS_Tree_Search-00F0FF?style=flat-square" />
+        <img src="https://img.shields.io/badge/Tree--sitter_AST-22C55E?style=flat-square" />
+        <img src="https://img.shields.io/badge/Docker_Sandbox-2496ED?style=flat-square&logo=docker&logoColor=white" />
+      </p>
+      <a href="https://github.com/Sameer45-Ali/Sameer-portfolio"><b>Explore Aegis-SWE Architecture ➔</b></a>
+    </td>
+  </tr>
 </table>
 
 ---

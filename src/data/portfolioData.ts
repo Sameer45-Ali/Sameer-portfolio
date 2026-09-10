@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   tagline: string;
-  category: "Multimodal & Vision" | "Deep Learning" | "Full-Stack AI";
+  category: "Multimodal & Vision" | "Deep Learning" | "Full-Stack AI" | "Autonomous & Agentic AI";
   description: string;
   highlights: string[];
   techStack: string[];
@@ -39,14 +39,51 @@ export const portfolioData = {
     bio: "AI/ML Engineer specializing in Python development, multimodal AI pipelines, and deep learning architectures. Experienced in designing asynchronous processing pipelines for video transcription and keyframe extraction, training convolutional neural networks (CNNs) for medical image classification, and building low-latency conversational AI systems with TensorFlow, Keras, OpenCV, faster-whisper, and spaCy.",
     availability: "Open to Remote, Hybrid, and On-site Python, AI/ML, and Software Engineering opportunities worldwide.",
     stats: [
-      { label: "Core AI Projects", value: "6 Flagship" },
+      { label: "Core AI Projects", value: "8 Flagship" },
+      { label: "Agentic AI & LLMs", value: "MCTS, RAG & Claude" },
       { label: "Deep Learning Stack", value: "PyTorch, TF & Keras" },
-      { label: "Multimodal AI", value: "Vision & Speech" },
       { label: "CS Degree", value: "Sukkur IBA '26" },
     ],
   },
 
   projects: [
+    {
+      id: "aegis-swe-agent",
+      title: "Aegis-SWE: Autonomous Software Engineering Agent",
+      tagline: "Agentic MCTS Search, Tree-sitter Code RAG & Closed-Loop Docker Verification",
+      category: "Autonomous & Agentic AI",
+      description:
+        "An autonomous software engineering agent powered by Claude 3.5 Sonnet, GPT-4o, and Llama 3.3 engineered to resolve complex GitHub repository issues through guided search, AST code retrieval, and verified test execution.",
+      highlights: [
+        "Agentic MCTS Search: Employed Monte Carlo Tree Search with UCT (Upper Confidence Bound) to navigate code hypothesis branches with automated backtracking.",
+        "Code RAG: Leveraged Tree-sitter AST symbol call-graphs to retrieve relevant functions and symbols without overflowing context limits.",
+        "Prompt Engineering: Formulated a robust 3-role prompt system (Planner, Patch Generator, Critic) enforcing structured JSON diff formats.",
+        "Closed-Loop Verification: Executed patches inside Docker sandboxes to verify reproduction tests turned green before committing fixes.",
+      ],
+      techStack: [
+        "Python",
+        "Claude 3.5 Sonnet",
+        "GPT-4o",
+        "Llama 3.3",
+        "MCTS / UCT Search",
+        "Tree-sitter AST",
+        "Docker Sandboxing",
+        "JSON Diffs",
+        "SWE-bench",
+      ],
+      githubUrl: "https://github.com/Sameer45-Ali/Sameer-portfolio",
+      architectureDetails: [
+        "Monte Carlo Tree Search (MCTS) with UCT exploration-exploitation balance over hypothesis branches.",
+        "Tree-sitter AST parser building semantic symbol call-graphs for context-bounded Code RAG.",
+        "3-Role agentic architecture: Planner generates fix hypotheses, Patch Generator outputs JSON diffs, Critic evaluates feasibility.",
+        "Isolated Docker sandbox executing pytest/tox test suites to enforce closed-loop verification before commit.",
+      ],
+      metrics: [
+        { label: "Search Engine", value: "MCTS + UCT Tree Search" },
+        { label: "Code RAG", value: "Tree-sitter AST Graphs" },
+        { label: "Sandbox", value: "Closed-Loop Docker Verified" },
+      ],
+    },
     {
       id: "multimodal-video-pipeline",
       title: "Multimodal Video AI Pipeline",
@@ -167,6 +204,32 @@ export const portfolioData = {
         "Custom multimodal conversational dataset pipeline with synthetic invoice generation.",
         "Automated benchmark harness comparing zero-shot Base VLM vs. fine-tuned DocVLM.",
       ],
+    },
+    {
+      id: "anemia-leukemia-prediction",
+      title: "Hematological Disease Diagnostic System (Anemia & Leukemia)",
+      tagline: "Dual-Disease Clinical Diagnostic Classifier using XGBoost & LightGBM with 100% Recall",
+      category: "Deep Learning",
+      description:
+        "Dual-disease clinical diagnostic pipeline utilizing Gradient Boosting Machines (XGBoost & LightGBM) to detect Anemia and Leukemia from routine Complete Blood Count (CBC) markers and Bone Marrow Blast percentages with zero false negatives.",
+      highlights: [
+        "Engineered dual classification pipelines with XGBoost (Leukemia) and LightGBM (Anemia) utilizing clinical blood markers (Hemoglobin, MCV, MCH, MCHC, and Blast counts).",
+        "Resolved accuracy paradox in medical screening through target realignment, SMOTE resampling, and recall-weighted cost-sensitive learning to achieve 100% leukemia recall.",
+        "Generated clinical explainability artifacts including feature importance rankings, confusion matrices, and correlation heatmaps to support clinician decision-making.",
+      ],
+      techStack: ["Python", "XGBoost", "LightGBM", "Scikit-Learn", "SMOTE", "Pandas", "NumPy", "Matplotlib / Seaborn"],
+      githubUrl: "https://github.com/Sameer45-Ali/ANEMIA_LEUKEMIA_DISEASES_PREDICTION",
+      architectureDetails: [
+        "Target realignment and preprocessing pipeline correcting noisy clinical ground truth.",
+        "Cost-sensitive training prioritizing recall to eliminate critical false negatives in leukemia detection.",
+        "Verified inference engine delivering >99% confidence probability scores on real test samples.",
+      ],
+      metrics: [
+        { label: "Leukemia Recall", value: "100% (1.00 F1)" },
+        { label: "Anemia Accuracy", value: "100% (99.67% Conf)" },
+        { label: "Models", value: "XGBoost & LightGBM" },
+      ],
+    },
     {
       id: "image-enhancement-dl",
       title: "AI Image Enhancement & Colorization Studio",
@@ -195,6 +258,17 @@ export const portfolioData = {
   ] as Project[],
 
   skills: [
+    {
+      title: "Agentic AI & LLM Systems",
+      icon: "Brain",
+      skills: [
+        { name: "Autonomous Coding Agents", level: "Expert", description: "MCTS search, UCT hypothesis trees, automated backtracking" },
+        { name: "Code RAG & AST Call-Graphs", level: "Advanced", description: "Tree-sitter AST syntax parsing, symbol dependency mapping" },
+        { name: "Multi-Agent Protocols & Prompting", level: "Advanced", description: "Planner-Generator-Critic roles, JSON diff generation" },
+        { name: "Docker Sandboxing & SWE-bench", level: "Advanced", description: "Closed-loop verification, reproduction test execution" },
+        { name: "Model Orchestration", level: "Advanced", description: "Claude 3.5 Sonnet, GPT-4o, Llama 3.3, Groq API" },
+      ],
+    },
     {
       title: "AI, Deep Learning & Vision",
       icon: "Brain",
@@ -289,6 +363,24 @@ export const portfolioData = {
   },
 
   interactiveTerminalScenarios: [
+    {
+      id: "aegis-swe-agent",
+      name: "Run Aegis-SWE MCTS Agent Benchmark",
+      command: "python -m aegis_swe.agent --repo sympy/sympy --issue #24102 --model claude-3-5-sonnet --search mcts",
+      output: `[AEGIS-SWE] Initializing Autonomous SWE Agent...
+[MODELS] Multi-LLM Ensemble Loaded: Planner (Claude 3.5 Sonnet) | PatchGen (GPT-4o) | Critic (Llama 3.3)
+[CODE RAG] Indexing repository via Tree-sitter AST parser...
+  ✓ Generated symbol call-graph: 142 functions, 18 classes in scope (zero context overflow).
+[MCTS SEARCH] Launching Monte Carlo Tree Search (UCT exploration c=1.414)...
+  ✓ Hypothesis Branch 1 [AST visitor rewrite]: Evaluation score = 0.62
+  ✓ Hypothesis Branch 2 [Symbolic dispatch handler]: Evaluation score = 0.94 (Promoted)
+[PROMPT ENGINE] Generating structured JSON diff patch via 3-role prompt protocol...
+[SANDBOX] Spawning isolated Docker container [aegis-sandbox-4091]...
+  ✓ Applied candidate patch to /repo/sympy/core/expr.py
+  ✓ Executed reproduction test: pytest sympy/core/tests/test_expr.py
+  ✓ Results: 48 passed, 0 failed, 1 reproduction test flipped RED -> GREEN
+[VERIFICATION] Closed-loop verification PASSED. Patch committed with 100% test suite integrity!`,
+    },
     {
       id: "video-pipeline",
       name: "Run Multimodal Video & Keyframe Pipeline",

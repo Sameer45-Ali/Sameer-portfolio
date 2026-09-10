@@ -26,6 +26,7 @@ export default function Projects() {
 
   const categories = [
     "All",
+    "Autonomous & Agentic AI",
     "Multimodal & Vision",
     "Deep Learning",
     "Full-Stack AI",
@@ -38,6 +39,8 @@ export default function Projects() {
 
   const getCategoryIcon = (category: Project["category"]) => {
     switch (category) {
+      case "Autonomous & Agentic AI":
+        return <Bot className="w-4 h-4 text-cyan-400" />;
       case "Multimodal & Vision":
         return <Video className="w-4 h-4 text-purple-400" />;
       case "Deep Learning":

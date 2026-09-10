@@ -55,11 +55,11 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg sm:text-2xl md:text-3xl font-semibold text-slate-300 mb-6 flex flex-wrap items-center justify-center gap-2"
         >
-          <span className="font-mono text-cyan-400">Python AI Engineer</span>
+          <span className="font-mono text-cyan-400">Agentic AI Engineer</span>
           <span className="text-slate-600">•</span>
-          <span className="font-mono text-purple-400">Multimodal Pipelines</span>
+          <span className="font-mono text-purple-400">Autonomous Coding Agents</span>
           <span className="text-slate-600">•</span>
-          <span className="font-mono text-emerald-400">Deep Learning & Vision</span>
+          <span className="font-mono text-emerald-400">Multimodal & Vision AI</span>
         </motion.div>
 
         {/* Bio / Summary */}
@@ -80,12 +80,12 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-mono text-slate-300"
         >
           {[
-            "faster-whisper & Speech AI",
-            "OpenCV Keyframe Processing",
-            "NIH Chest X-ray14 CNNs",
-            "U-Net Image Colorization",
-            "spaCy Intent Recognition",
-            "Asyncio & Multithreading",
+            "Autonomous Agents (MCTS + UCT)",
+            "Code RAG (Tree-sitter AST)",
+            "Closed-Loop Docker Sandboxes",
+            "faster-whisper & Multimodal",
+            "CNNs & Medical Deep Learning",
+            "Asyncio & Production APIs",
           ].map((pill, i) => (
             <span
               key={i}
