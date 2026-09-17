@@ -1,42 +1,62 @@
-import Navbar from "@/components/Navbar";
+"use client";
+
+import React, { useState } from "react";
+import CyberNavbar from "@/components/CyberNavbar";
 import Hero from "@/components/Hero";
-import ParticleBackground from "@/components/ParticleBackground";
+import NeuralMeshCanvas from "@/components/NeuralMeshCanvas";
+import TechMarquee from "@/components/TechMarquee";
+import ProjectsShowcase from "@/components/ProjectsShowcase";
 import AiEvalTerminal from "@/components/AiEvalTerminal";
-import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Certifications from "@/components/Certifications";
 import ExperienceEdu from "@/components/ExperienceEdu";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CommandPalette from "@/components/CommandPalette";
+import AskAiDrawer from "@/components/AskAiDrawer";
 
 export default function Home() {
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+
   return (
-    <main className="min-h-screen bg-[#07090e] text-slate-100 relative selection:bg-cyan-500/30 selection:text-cyan-200">
-      {/* Interactive Canvas Neural Particle Mesh */}
-      <ParticleBackground />
+    <main className="min-h-screen bg-[#05070d] text-slate-100 relative selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden font-body">
+      {/* Interactive HTML5 Neural Synapse Canvas */}
+      <NeuralMeshCanvas />
 
-      {/* Navigation Header */}
-      <Navbar />
+      {/* Cyber Command Palette (Ctrl + K / Cmd + K) */}
+      <CommandPalette
+        isOpen={isCommandPaletteOpen}
+        onClose={() => setIsCommandPaletteOpen(false)}
+      />
 
-      {/* Hero Section */}
+      {/* Floating Ask Sameer AI Assistant */}
+      <AskAiDrawer />
+
+      {/* Floating Cyber HUD Navigation Header */}
+      <CyberNavbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
+
+      {/* Hero Section with Cyber HUD Telemetry & Dynamic Role Rotator */}
       <Hero />
 
-      {/* Interactive AI Eval & Model Sandbox */}
+      {/* Infinite Smooth Scrolling Tech Stack Stream */}
+      <TechMarquee />
+
+      {/* Interactive 8-Project Flagship Systems Showcase */}
+      <ProjectsShowcase />
+
+      {/* Interactive AI Pipeline & Model Benchmark Sandbox */}
       <AiEvalTerminal />
 
-      {/* Featured AI/ML Projects */}
-      <Projects />
-
-      {/* Technical Skills & Capabilities */}
+      {/* Technical Skills & Capabilities Breakdown */}
       <Skills />
 
-      {/* Verified Certifications & Continuous Learning */}
+      {/* Verified Certifications & Credentials */}
       <Certifications />
 
-      {/* Education & Core Foundations */}
+      {/* Education & Core Foundations (Sukkur IBA CS '26) */}
       <ExperienceEdu />
 
-      {/* Contact & Recruiter Outreach */}
+      {/* Contact & Recruiter Direct Outreach Console */}
       <Contact />
 
       {/* Footer */}

@@ -5,23 +5,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Layers,
   Github,
-  ExternalLink,
   ChevronDown,
   ChevronUp,
   Cpu,
   CheckCircle,
   Zap,
   Sparkles,
-  BarChart3,
   Bot,
   Video,
   Activity,
   Mic,
   ArrowUpRight,
+  ExternalLink,
 } from "lucide-react";
 import { portfolioData, Project } from "@/data/portfolioData";
 
-function SpotlightCard({
+function ProjectCard({
   project,
   isExpanded,
   onToggleExpand,
@@ -34,7 +33,6 @@ function SpotlightCard({
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -45,18 +43,43 @@ function SpotlightCard({
     });
   };
 
-  const getCategoryIcon = (category: Project["category"]) => {
+  const getCategoryTheme = (category: Project["category"]) => {
     switch (category) {
       case "Multimodal & Vision":
-        return <Video className="w-4 h-4 text-purple-400" />;
+        return {
+          icon: Video,
+          badgeColor: "bg-purple-500/10 text-purple-300 border-purple-500/30",
+          glowColor: "rgba(168, 85, 247, 0.15)",
+        };
       case "Deep Learning":
-        return <Activity className="w-4 h-4 text-emerald-400" />;
+        return {
+          icon: Activity,
+          badgeColor: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30",
+          glowColor: "rgba(16, 185, 129, 0.15)",
+        };
       case "Full-Stack AI":
-        return <Mic className="w-4 h-4 text-amber-400" />;
+        return {
+          icon: Mic,
+          badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+          glowColor: "rgba(245, 158, 11, 0.15)",
+        };
+      case "Autonomous & Agentic AI":
+        return {
+          icon: Bot,
+          badgeColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
+          glowColor: "rgba(0, 240, 255, 0.15)",
+        };
       default:
-        return <Bot className="w-4 h-4 text-cyan-400" />;
+        return {
+          icon: Cpu,
+          badgeColor: "bg-sky-500/10 text-sky-300 border-sky-500/30",
+          glowColor: "rgba(56, 189, 248, 0.15)",
+        };
     }
   };
+
+  const theme = getCategoryTheme(project.category);
+  const CategoryIcon = theme.icon;
 
   return (
     <motion.div
@@ -64,59 +87,50 @@ function SpotlightCard({
       layout
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.4, delay: idx * 0.08 }}
+      exit={{ opacity: 0, scale: 0.96 }}
+      transition={{ duration: 0.4, delay: idx * 0.05 }}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`relative rounded-2xl glass-panel p-6 flex flex-col justify-between transition-all duration-300 border overflow-hidden group ${
+      className={`relative rounded-2xl cyber-glass p-6 sm:p-7 flex flex-col justify-between overflow-hidden group transition-all duration-300 border ${
         isExpanded
-          ? "border-cyan-500/50 shadow-[0_0_35px_rgba(0,240,255,0.18)] bg-slate-900/95"
-          : "border-slate-800/90 hover:border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/10"
+          ? "border-cyan-500/50 shadow-[0_0_35px_rgba(0,240,255,0.2)] bg-[#0c1222]/95"
+          : "border-slate-800 hover:border-cyan-500/30"
       }`}
     >
       {/* Dynamic Cursor Spotlight Radial Glow */}
       <div
         className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
         style={{
-          background: `radial-gradient(500px circle at ${mousePos.x}px ${mousePos.y}px, rgba(0, 240, 255, 0.12), transparent 40%)`,
+          background: `radial-gradient(450px circle at ${mousePos.x}px ${mousePos.y}px, ${theme.glowColor}, transparent 60%)`,
         }}
       />
 
       <div className="relative z-10">
-        {/* Category & Links Header */}
+        {/* Category Header & GitHub Link */}
         <div className="flex items-center justify-between gap-2 mb-4">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-800 text-xs font-mono text-slate-300 shadow-inner">
-            {getCategoryIcon(project.category)}
+          <div
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono border ${theme.badgeColor}`}
+          >
+            <CategoryIcon className="w-3.5 h-3.5" />
             <span>{project.category}</span>
           </div>
 
           <div className="flex items-center gap-2">
-            {project.id === "doc-vlm-qlora" && (
-              <a
-                href="#docvlm-interactive"
-                className="flex items-center gap-1 px-2.5 py-1 rounded-md bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-[11px] font-mono transition-colors"
-                title="Launch Live VLM Scanner Demo"
-              >
-                <Sparkles className="w-3 h-3 text-cyan-400" />
-                Live Demo
-              </a>
-            )}
             <a
               href={project.githubUrl || portfolioData.personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-slate-400 hover:text-cyan-400 bg-slate-900/80 hover:bg-slate-800 rounded-lg border border-slate-800 transition-colors"
+              className="flex items-center gap-1 p-2 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-slate-400 hover:text-cyan-300 border border-slate-800 text-xs font-mono transition-all"
               title="View Repository on GitHub"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3 h-3 text-slate-500 group-hover:text-cyan-400" />
             </a>
           </div>
         </div>
 
         {/* Title & Tagline */}
-        <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors flex items-center justify-between">
-          <span>{project.title}</span>
+        <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 group-hover:text-cyan-300 transition-colors">
+          {project.title}
         </h3>
         <p className="text-xs font-mono text-cyan-400/90 mb-3 leading-relaxed">
           {project.tagline}
@@ -127,8 +141,8 @@ function SpotlightCard({
           {project.description}
         </p>
 
-        {/* Highlights List */}
-        <div className="space-y-2 mb-6">
+        {/* Key Highlights */}
+        <div className="space-y-2 mb-5">
           {project.highlights.map((highlight, hIdx) => (
             <div key={hIdx} className="flex items-start gap-2 text-xs text-slate-300">
               <CheckCircle className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
@@ -137,27 +151,27 @@ function SpotlightCard({
           ))}
         </div>
 
-        {/* Architecture / Deep Dive Expander */}
+        {/* Architecture Flow Expander Drawer */}
         {isExpanded && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="mb-6 pt-4 border-t border-slate-800/80 space-y-4"
+            className="mb-5 pt-4 border-t border-slate-800/80 space-y-4"
           >
             <div>
               <h4 className="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5" />
-                Architecture & Pipeline Flow
+                <Zap className="w-3.5 h-3.5 text-purple-400" />
+                Pipeline Flow &amp; System Architecture
               </h4>
               <div className="space-y-1.5">
                 {project.architectureDetails.map((detail, dIdx) => (
                   <div
                     key={dIdx}
-                    className="text-xs text-slate-300 bg-slate-950/70 p-2.5 rounded-lg border border-slate-800 flex items-start gap-2 font-mono"
+                    className="text-xs text-slate-300 bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 flex items-start gap-2 font-mono"
                   >
-                    <span className="text-purple-400">0{dIdx + 1}.</span>
-                    <span className="font-sans">{detail}</span>
+                    <span className="text-cyan-400 font-bold">0{dIdx + 1}.</span>
+                    <span className="font-sans font-light">{detail}</span>
                   </div>
                 ))}
               </div>
@@ -169,7 +183,7 @@ function SpotlightCard({
                 {project.metrics.map((m, mIdx) => (
                   <div
                     key={mIdx}
-                    className="bg-slate-950 p-2.5 rounded-lg border border-cyan-500/25 text-center shadow-inner"
+                    className="bg-slate-950 p-2.5 rounded-lg border border-cyan-500/25 text-center"
                   >
                     <div className="text-[10px] text-slate-400 font-mono">{m.label}</div>
                     <div className="text-xs font-bold text-cyan-300 font-mono mt-0.5">
@@ -183,8 +197,8 @@ function SpotlightCard({
         )}
       </div>
 
-      {/* Bottom Footer: Tech Stack & Toggle */}
-      <div className="relative z-10 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      {/* Card Footer: Tech Stack Pills & Deep Dive Toggle */}
+      <div className="relative z-10 pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex flex-wrap gap-1.5">
           {project.techStack.map((tech, tIdx) => (
             <span
@@ -206,7 +220,7 @@ function SpotlightCard({
             </>
           ) : (
             <>
-              Deep Dive <ChevronDown className="w-3.5 h-3.5" />
+              Architecture <ChevronDown className="w-3.5 h-3.5" />
             </>
           )}
         </button>
@@ -215,7 +229,7 @@ function SpotlightCard({
   );
 }
 
-export default function Projects() {
+export default function ProjectsShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [expandedProjectId, setExpandedProjectId] = useState<string | null>(null);
 
@@ -223,6 +237,7 @@ export default function Projects() {
     "All",
     "Multimodal & Vision",
     "Deep Learning",
+    "Autonomous & Agentic AI",
     "Full-Stack AI",
   ];
 
@@ -236,44 +251,44 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-400 mb-3 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono text-cyan-400 mb-3 shadow-[0_0_15px_rgba(0,240,255,0.15)]">
             <Layers className="w-3.5 h-3.5" />
-            <span>FEATURED PRODUCTION WORK</span>
+            <span>8 FLAGSHIP PRODUCTION PROJECTS</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Flagship AI & Software Engineering Projects
+          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
+            Engineered AI &amp; Software Systems
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mt-2">
-            Interactive deep-dives into Vision-Language Model fine-tuning (QLoRA), multimodal video processing pipelines, and full-stack AI applications.
+          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mt-3 font-light">
+            End-to-end architectures covering 4-bit Vision-Language Models, asynchronous multimodal video processing, autonomous agent search, and clinical deep learning diagnostics.
           </p>
 
-          {/* Filter Pills */}
+          {/* Category Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-medium transition-all ${
+                className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all ${
                   selectedCategory === cat
-                    ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-md shadow-cyan-500/20 scale-105"
-                    : "bg-slate-900/80 text-slate-400 hover:text-slate-200 border border-slate-800 hover:border-slate-700"
+                    ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-slate-950 font-bold shadow-md shadow-cyan-500/30 scale-105"
+                    : "bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700"
                 }`}
               >
-                {cat}
+                {cat} {cat === "All" ? `(${portfolioData.projects.length})` : ""}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Projects Grid with Interactive Spotlight Cards */}
+        {/* 8-Project Interactive Spotlight Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <AnimatePresence>
             {filteredProjects.map((project, idx) => (
-              <SpotlightCard
+              <ProjectCard
                 key={project.id}
                 project={project}
                 isExpanded={expandedProjectId === project.id}

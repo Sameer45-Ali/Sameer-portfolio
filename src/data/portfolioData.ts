@@ -364,6 +364,30 @@ export const portfolioData = {
 
   interactiveTerminalScenarios: [
     {
+      id: "doc-vlm-qlora",
+      name: "Run DocVLM 4-Bit QLoRA Invoice Extraction",
+      command: "python -m doc_vlm.inference --weights qwen2-vl-2b-qlora-nf4.pt --doc sample_invoice.pdf --format json",
+      output: `[DOC-VLM] Loading 4-bit Quantized Vision-Language Model...
+[VRAM FOOTPRINT] Base Weights: 1.42 GB | QLoRA Adapters: 0.40 GB | Total VRAM: 1.82 GB (78% VRAM Reduction)
+[INFERENCE] Visual Encoder (ViT-H/14) processing document image at 1080p...
+[DECODER] Cross-attention projection generating structured JSON tokens:
+{
+  "document_type": "Commercial Tax Invoice",
+  "invoice_number": "INV-2026-0884",
+  "vendor": "ACME Supplies & Logistics Ltd",
+  "date": "2026-10-24",
+  "line_items": [
+    { "desc": "Cloud Compute Cluster H100 (x4)", "amount": 4200.00 },
+    { "desc": "Neural Pipeline Storage (10TB)", "amount": 675.00 }
+  ],
+  "total_due": 4875.00,
+  "currency": "USD",
+  "model_confidence": 0.997,
+  "schema_validation": "PASSED (100%)"
+}
+[PERFORMANCE] Inference Latency: 34.2ms | Tokens/sec: 48.5 tps`,
+    },
+    {
       id: "aegis-swe-agent",
       name: "Run Aegis-SWE MCTS Agent Benchmark",
       command: "python -m aegis_swe.agent --repo sympy/sympy --issue #24102 --model claude-3-5-sonnet --search mcts",

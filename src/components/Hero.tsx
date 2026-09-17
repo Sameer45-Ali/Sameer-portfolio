@@ -3,224 +3,231 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
+  ArrowDown,
+  ArrowUpRight,
   Terminal,
-  ArrowRight,
-  Download,
-  CheckCircle2,
   Sparkles,
-  MapPin,
-  Mail,
+  Github,
+  Linkedin,
+  Copy,
+  Check,
+  Cpu,
+  Layers,
+  Activity,
   ShieldCheck,
+  Zap,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
+import BorderBeam from "@/components/BorderBeam";
 
 export default function Hero() {
-  const roleRotations = [
+  const roles = [
     {
-      primary: "Agentic AI Engineer",
-      primaryColor: "text-cyan-400",
-      secondary: "Autonomous Coding Agents",
-      secondaryColor: "text-purple-400",
-      tertiary: "MCTS & Code RAG",
-      tertiaryColor: "text-emerald-400",
+      title: "Multimodal Video Pipelines",
+      subtitle: "faster-whisper, OpenCV & Async Python",
+      color: "text-cyan-400",
+      bg: "bg-cyan-500/10 border-cyan-500/30",
     },
     {
-      primary: "Python AI / ML Engineer",
-      primaryColor: "text-sky-400",
-      secondary: "Multimodal Video Pipelines",
-      secondaryColor: "text-pink-400",
-      tertiary: "faster-whisper & OpenCV",
-      tertiaryColor: "text-amber-400",
+      title: "Vision-Language Models (VLM)",
+      subtitle: "4-bit QLoRA PEFT on Qwen2-VL",
+      color: "text-purple-400",
+      bg: "bg-purple-500/10 border-purple-500/30",
     },
     {
-      primary: "Deep Learning Specialist",
-      primaryColor: "text-emerald-400",
-      secondary: "Clinical AI & Diagnostics",
-      secondaryColor: "text-cyan-400",
-      tertiary: "XGBoost, LightGBM & CNNs",
-      tertiaryColor: "text-purple-400",
+      title: "High-Throughput Backends",
+      subtitle: "FastAPI, Docker & Asyncio Services",
+      color: "text-emerald-400",
+      bg: "bg-emerald-500/10 border-emerald-500/30",
     },
     {
-      primary: "Full-Stack AI Developer",
-      primaryColor: "text-purple-400",
-      secondary: "FastAPI & Docker Sandboxes",
-      secondaryColor: "text-cyan-400",
-      tertiary: "Next.js & GenAI LLMs",
-      tertiaryColor: "text-emerald-400",
+      title: "Deep Learning Architectures",
+      subtitle: "Medical CNNs, U-Net & Clinical Diagnostics",
+      color: "text-amber-400",
+      bg: "bg-amber-500/10 border-amber-500/30",
     },
   ];
 
   const [roleIndex, setRoleIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setRoleIndex((prev) => (prev + 1) % roleRotations.length);
-    }, 3600);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 3200);
     return () => clearInterval(timer);
-  }, [roleRotations.length]);
+  }, [roles.length]);
 
-  const currentRole = roleRotations[roleIndex];
+  const currentRole = roles[roleIndex];
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("sameer2659110@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-[95vh] flex flex-col items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden z-10"
     >
+      {/* Background Radial Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-cyan-500/15 via-purple-600/15 to-transparent blur-[140px] pointer-events-none" />
+
       <div className="max-w-5xl mx-auto w-full text-center relative z-10">
-        {/* Availability Badge */}
+        {/* Cyber HUD Telemetry Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6 shadow-[0_0_20px_rgba(0,240,255,0.15)]"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#080d1a]/90 border border-cyan-500/30 backdrop-blur-xl text-xs font-mono text-cyan-300 shadow-[0_0_20px_rgba(0,240,255,0.15)] mb-6 overflow-hidden relative"
         >
+          <BorderBeam size={120} duration={6} colorFrom="#00f0ff" colorTo="#a855f7" />
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
           </span>
-          <span>OPEN TO REMOTE, HYBRID & ON-SITE AI ROLES</span>
+          <span>SYSTEM READY</span>
+          <span className="text-slate-600">•</span>
+          <span className="text-slate-300">Open for AI Engineering Roles Worldwide</span>
+          <span className="text-slate-600 hidden sm:inline">•</span>
+          <span className="text-slate-400 hidden sm:inline">Sukkur IBA &apos;26</span>
         </motion.div>
 
-        {/* Main Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+        {/* Name & Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-4"
+          transition={{ duration: 0.55, delay: 0.1 }}
+          className="space-y-3"
         >
-          Hi, I&apos;m{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400">
-            {portfolioData.personal.name}
-          </span>
-        </motion.h1>
+          <div className="text-xs sm:text-sm font-mono tracking-[0.25em] text-cyan-400/90 uppercase font-semibold">
+            // APPLIED MACHINE LEARNING &amp; MULTIMODAL SYSTEMS
+          </div>
 
-        {/* Subtitle / Role (Animated Cycling) */}
-        <div className="min-h-[48px] sm:min-h-[56px] flex items-center justify-center mb-6">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={roleIndex}
-              initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -15, filter: "blur(4px)" }}
-              transition={{ duration: 0.45, ease: "easeInOut" }}
-              className="text-base sm:text-xl md:text-2xl font-semibold text-slate-300 flex flex-wrap items-center justify-center gap-2"
-            >
-              <span className={`font-mono font-bold ${currentRole.primaryColor} drop-shadow-[0_0_12px_rgba(0,240,255,0.3)]`}>
-                {currentRole.primary}
-              </span>
-              <span className="text-slate-600 select-none">•</span>
-              <span className={`font-mono ${currentRole.secondaryColor}`}>
-                {currentRole.secondary}
-              </span>
-              <span className="text-slate-600 select-none">•</span>
-              <span className={`font-mono ${currentRole.tertiaryColor}`}>
-                {currentRole.tertiary}
-              </span>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.08]">
+            Sameer Ali
+            <br />
+            <span className="shimmer-text">
+              Python AI Engineer
+            </span>
+          </h1>
+        </motion.div>
 
-        {/* Bio / Summary */}
+        {/* Dynamic Role Rotator Pill */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-4 flex items-center justify-center"
+        >
+          <div className="h-9 relative overflow-hidden flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={roleIndex}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs sm:text-sm font-mono ${currentRole.bg}`}
+              >
+                <Sparkles className={`w-3.5 h-3.5 ${currentRole.color}`} />
+                <span className={`font-semibold ${currentRole.color}`}>
+                  {currentRole.title}
+                </span>
+                <span className="text-slate-500 hidden sm:inline">•</span>
+                <span className="text-slate-300 hidden sm:inline text-xs">
+                  {currentRole.subtitle}
+                </span>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+
+        {/* Concise Value Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="max-w-3xl mx-auto text-slate-300/90 text-sm sm:text-base md:text-lg leading-relaxed mb-8 font-light"
+          transition={{ duration: 0.55, delay: 0.25 }}
+          className="mt-5 text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-light"
         >
-          {portfolioData.personal.bio}
+          Designing production-ready machine learning pipelines, fine-tuning parameter-efficient <span className="text-white font-medium">Vision-Language Models (4-bit QLoRA)</span>, and engineering asynchronous <span className="text-cyan-300 font-medium">Python &amp; FastAPI</span> backends for real-world deployment.
         </motion.p>
 
-        {/* Key Competency Pills */}
+        {/* CTA Group */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-mono text-slate-300"
+          transition={{ duration: 0.55, delay: 0.35 }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
         >
-          {[
-            "Autonomous Agents (MCTS + UCT)",
-            "Code RAG (Tree-sitter AST)",
-            "Closed-Loop Docker Sandboxes",
-            "faster-whisper & Multimodal",
-            "CNNs & Medical Deep Learning",
-            "Asyncio & Production APIs",
-          ].map((pill, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 rounded-md bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-1.5"
-            >
-              <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-              {pill}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-16"
-        >
-          <a
-            href="#sandbox"
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-600 text-slate-950 font-bold text-sm hover:brightness-110 shadow-lg shadow-cyan-500/25 transition-all glow-btn"
-          >
-            <Terminal className="w-4 h-4 text-slate-950" />
-            Launch AI Eval Sandbox
-            <ArrowRight className="w-4 h-4 text-slate-950" />
-          </a>
-
+          {/* Explore Projects Button */}
           <a
             href="#projects"
-            className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-medium text-sm border border-slate-700 hover:border-cyan-500/50 transition-all shadow-md"
+            className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-purple-600 text-slate-950 font-mono text-xs sm:text-sm font-bold shadow-[0_0_30px_rgba(0,240,255,0.4)] hover:shadow-[0_0_45px_rgba(0,240,255,0.6)] hover:scale-105 transition-all"
           >
-            <Sparkles className="w-4 h-4 text-cyan-400" />
-            Explore Projects
+            <span>Explore 8 Flagship Systems</span>
+            <ArrowDown className="w-4 h-4 text-slate-950 group-hover:translate-y-0.5 transition-transform" />
           </a>
 
+          {/* AI Sandbox Button */}
           <a
-            href="#contact"
-            className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-950/60 hover:bg-slate-900 text-slate-300 font-medium text-sm border border-slate-800 hover:text-cyan-300 transition-all"
+            href="#sandbox"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0a0f1d] hover:bg-slate-900 text-slate-200 hover:text-cyan-300 border border-slate-800 hover:border-cyan-500/40 text-xs sm:text-sm font-mono transition-all shadow-md"
           >
-            <Mail className="w-4 h-4 text-purple-400" />
-            Contact Sameer
+            <Terminal className="w-4 h-4 text-cyan-400" />
+            <span>Launch AI Sandbox</span>
           </a>
+
+          {/* Copy Email Button */}
+          <button
+            onClick={handleCopyEmail}
+            className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-950 hover:bg-slate-900 text-slate-300 hover:text-white border border-slate-800 text-xs font-mono transition-all"
+            title="Click to copy email address"
+          >
+            {copied ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="text-emerald-400 font-bold">Email Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-3.5 h-3.5 text-slate-400" />
+                <span>Copy Email</span>
+              </>
+            )}
+          </button>
         </motion.div>
 
-        {/* Stats Grid */}
+        {/* Live Telemetry & Metric Highlights */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
+          transition={{ duration: 0.55, delay: 0.45 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 max-w-4xl mx-auto"
         >
-          {portfolioData.personal.stats.map((stat, i) => (
+          {[
+            { label: "Core AI Projects", value: "8 Flagship", sub: "Production Built" },
+            { label: "Pipeline Throughput", value: "10x Realtime", sub: "faster-whisper" },
+            { label: "VLM Quantization", value: "4-Bit QLoRA", sub: "78% VRAM Saved" },
+            { label: "CS Foundation", value: "Sukkur IBA", sub: "Graduating '26" },
+          ].map((stat, idx) => (
             <div
-              key={i}
-              className="p-4 rounded-xl glass-panel text-center group hover:border-cyan-500/40 transition-all"
+              key={idx}
+              className="p-3.5 rounded-xl cyber-glass text-center transition-all hover:scale-105 group"
             >
-              <div className="text-xl sm:text-2xl font-bold font-mono text-cyan-300 group-hover:scale-105 transition-transform">
+              <div className="text-base sm:text-lg font-bold font-mono text-white group-hover:text-cyan-300 transition-colors">
                 {stat.value}
               </div>
-              <div className="text-xs text-slate-400 mt-1 font-medium">
+              <div className="text-xs font-mono text-cyan-400 font-medium mt-0.5">
                 {stat.label}
+              </div>
+              <div className="text-[10px] text-slate-500 font-mono mt-0.5">
+                {stat.sub}
               </div>
             </div>
           ))}
         </motion.div>
-
-        {/* Location & University Tag */}
-        <div className="mt-8 flex items-center justify-center gap-4 text-xs text-slate-500 font-mono">
-          <span className="flex items-center gap-1">
-            <MapPin className="w-3.5 h-3.5 text-cyan-400/70" />
-            {portfolioData.personal.location}
-          </span>
-          <span>•</span>
-          <span className="flex items-center gap-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-purple-400/70" />
-            Sukkur IBA University (BS CS 2026)
-          </span>
-        </div>
       </div>
     </section>
   );
