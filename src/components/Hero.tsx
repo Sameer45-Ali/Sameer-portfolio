@@ -105,11 +105,33 @@ export default function Hero() {
             // APPLIED MACHINE LEARNING &amp; MULTIMODAL SYSTEMS
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.08]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.12]">
             Sameer Ali
             <br />
-            <span className="shimmer-text">
-              Python AI Engineer
+            <span className="inline-block relative min-h-[1.25em]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={roleIndex}
+                  initial={{ opacity: 0, y: 22, filter: "blur(6px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -22, filter: "blur(6px)" }}
+                  transition={{ duration: 0.45, ease: "easeInOut" }}
+                  className={`bg-gradient-to-r ${
+                    roleIndex === 0
+                      ? "from-cyan-400 via-sky-300 to-blue-500"
+                      : roleIndex === 1
+                      ? "from-purple-400 via-fuchsia-300 to-indigo-500"
+                      : roleIndex === 2
+                      ? "from-emerald-400 via-teal-300 to-cyan-500"
+                      : "from-amber-400 via-orange-300 to-rose-500"
+                  } bg-clip-text text-transparent inline-block`}
+                >
+                  {roleIndex === 0 && "Python AI Engineer"}
+                  {roleIndex === 1 && "Vision-Language (VLM) Specialist"}
+                  {roleIndex === 2 && "Multimodal Systems Architect"}
+                  {roleIndex === 3 && "Deep Learning Engineer"}
+                </motion.span>
+              </AnimatePresence>
             </span>
           </h1>
         </motion.div>

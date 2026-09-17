@@ -13,7 +13,6 @@ import ExperienceEdu from "@/components/ExperienceEdu";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CommandPalette from "@/components/CommandPalette";
-import AskAiDrawer from "@/components/AskAiDrawer";
 
 export default function Home() {
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
@@ -28,9 +27,6 @@ export default function Home() {
         isOpen={isCommandPaletteOpen}
         onClose={() => setIsCommandPaletteOpen(false)}
       />
-
-      {/* Floating Ask Sameer AI Assistant */}
-      <AskAiDrawer />
 
       {/* Floating Cyber HUD Navigation Header */}
       <CyberNavbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
